@@ -8,6 +8,7 @@ cat_names = df.columns.to_list()[27:]
 
 col1, col2 = st.columns(2)
 with col1:
+    choose_dataset = st.multiselect('Choose dataset', ['Bastor Craton'])
     el1 = st.selectbox('x axis', cat_names)
     el2 = st.selectbox('y axis', cat_names)
 with col2:

@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+
 file_path = 'data/BastarCraton.csv'
 df = pd.read_csv(file_path)
 #st.dataframe(df)

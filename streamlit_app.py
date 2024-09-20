@@ -4,9 +4,13 @@ import matplotlib.pyplot as plt
 
 file_path = 'data/BastarCraton.csv'
 df = pd.read_csv(file_path)
-#st.dataframe(df)
 cat_names = df.columns.to_list()[27:]
-st.title('Hello World!')
-st.write('*Data Science Course*')
-el1 = st.selectbox('Select element', cat_names)
-#st.container(height=400, border=True)
+
+col1, col2 = st.columns(2)
+with col1:
+    el1 = st.selectbox('x axis', cat_names)
+    el2 = st.selectbox('y axis', cat_names)
+with col2:
+    fig = plt.figure()
+    plt.scatter(df[el1]/10000, df[el2]/10000)
+    st.pyplot(fig)
